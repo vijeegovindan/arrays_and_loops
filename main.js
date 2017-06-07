@@ -49,7 +49,7 @@ console.assert(smallestNumber(numbers) === 1, {"message": "smallestNumber should
 // Write a function `getEvens()` that accepts an array
 // and returns only the even numbers in the array.
 // A:
-function getEvans(numbers)
+function getEvens(numbers)
 {
 	var new_array = new Array();
 
@@ -58,7 +58,7 @@ function getEvans(numbers)
 			new_array.push(numbers[i]);
 		 }
   }
-	return new_array.toString();
+	return new_array;
 };
 
 console.assert(getEvens(numbers).toString() === '12,4,18,6', {'message': 'getEvens should return "12,4,18,6"'});
@@ -88,7 +88,15 @@ console.assert(arrayReverser(numbers).toString() === '6,5,101,3,11,7,9,18,4,12,1
 // Write a function that accepts an array argument
 // and returns the sum of all of the numbers in the array
 // A:
-
+function sumArrayOfNumbers(numbers)
+{
+    var sum = 0;
+    for(i=0;i<numbers.length;i++)
+    {
+      sum = sum + parseInt(numbers[i]);
+    }
+    return sum;
+};
 
 console.assert(sumArrayOfNumbers(numbers) === 177, {'message': 'sumArrayOfNumbers should return 177'});
 
@@ -97,7 +105,18 @@ console.assert(sumArrayOfNumbers(numbers) === 177, {'message': 'sumArrayOfNumber
 // Write a function that accepts an array argument
 // and returns an array of only the numbers greater than 10
 // A:
-
+function numbersOver10(numbers)
+{
+  var new_array = new Array();
+  for(i=0;i<numbers.length;i++)
+  {
+      if(parseInt(numbers[i]) > 10)
+      {
+        new_array.push(numbers[i]);
+      }
+  }
+  return new_array;
+}
 
 console.assert(numbersOver10(numbers).toString() === "12,18,11,101", {'message': 'numbersOver10 should return "12,18,11,101"'});
 
@@ -106,7 +125,18 @@ console.assert(numbersOver10(numbers).toString() === "12,18,11,101", {'message':
 // Write a function that accepts both an array and number argument
 // and returns an array of only the numbers greater than the number passed to the function
 // A:
-
+function numbersOverX(numbers, greater_no)
+{
+  var new_array = new Array();
+  for(i=0;i<numbers.length;i++)
+  {
+      if(parseInt(numbers[i]) > greater_no)
+      {
+        new_array.push(numbers[i]);
+      }
+  }
+  return new_array;
+}
 
 console.assert(numbersOverX(numbers, 15).toString() === "18,101", {'message': 'numbersOverX should return "18,101"'});
 
@@ -117,7 +147,10 @@ console.assert(numbersOverX(numbers, 15).toString() === "18,101", {'message': 'n
 var numbers = [1,12,4,18,9,7,11,3,101,5,6];
 var numbersTwo = [33,56,72,2,5,66,90,21,42];
 // A:
-
+function joinArrays(doubleArray)
+{
+  return doubleArray[0].concat(doubleArray[1]);
+};
 
 console.assert(joinArrays([numbers, numbersTwo]).toString() === '1,12,4,18,9,7,11,3,101,5,6,33,56,72,2,5,66,90,21,42', {'message': 'joinArrays should return "1,12,4,18,9,7,11,3,101,5,6,33,56,72,2,5,66,90,21,42"'});
 
@@ -136,13 +169,13 @@ var instructors = [
 ];
 
 var instructorNameDiscipline = instructors[5];
-// greenvIlleInstructor = <your answer>
+// greenvIlleInstructor = ["Will", "JavaScript"]
 
 var instructorOne = instructors[4][0];
-// instructorOne = <your answer>
+// instructorOne = Dan
 
 var instructorTwo = instructors[0][1];
-// instructorTwo = <your answer>
+// instructorTwo = JavaScript
 
 var instructorThree = instructors[2][0];
-// instructorThree = <your answer>
+// instructorThree = Brit
